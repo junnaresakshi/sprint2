@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="7" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="22" time="2060.170888">
+<testcase classname="Automating the Users module of real estate application" name="Verify search functionality" time="150.100839">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page in order to serch the user records.............passed
+When admin creates three new user records having "Samiksha55","samu@gmail.com","DemoSamiksha&55","Editor","Saurabh56","SampleSaru@gmail.com","PassParu@289","Editor","DemoUserID","uniquemail@gmail.com","Uniquedemo@57","Author".passed
+And clicks on a link having name of the role as "Editor" to search the user records based on that role.passed
+Then all records having role name as "Editor" get displayed.................passed
+And admin clicks on "All" to see all the available user records.............passed
+And enters any "unique" in the search box...................................passed
+And clicks on Search Users button...........................................passed
+Then required user records having substring as "unique", get displayed......passed
+]]></system-out>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Bulk Actions functionality on Users page" time="107.427678">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page in order to use bulk actions functionality.....passed
+When admin adds two new users having "Aaaditi88", "demoaditti@gmail.com","Demoaddu@test3", "Contributor" and "A@aavani", "test3avani@gmail.com","AvaniDemo@test4","Author" respectively.passed
+And clicks on chechbox of user records having username as "Aaaditi88" and "A@aavani".passed
+And clicks on bulk actions list and selects delete option from the list.....passed
+And clicks on apply button in order to delete the selected records..........passed
+Then admin navigates to Delete Users page...................................passed
+And clicks on Confirm deletion button.......................................passed
+Then admin again navigates to Users page....................................passed
+And receives validation message on successful deletion of the selected records.passed
+]]></system-out>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Change role to functionality on Users page" time="107.833325">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page in order to change the role of selected users through change role to functionality.passed
+When admin creates two new user records having "10Deepika", "deepa@gmail.com","Demodeepa@test5", "Contributor" and "25Aadvika", "test5advika@gmail.com","AadvikaSample@test5","Author" respectively.passed
+And clicks on the checkboxes of required user records having username as "10Deepika" and "25Aadvika".passed
+And clicks on Change role to list and selects "Customer" option from the list.passed
+And clicks on Change button.................................................passed
+Then admin receives validation message of successful change in the role of selected user records.passed
+And confirms that the role of user records having "10Deepika", "25Aadvika" are changed to "Customer".passed
+]]></system-out>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify edit and view options of admin record" time="73.733925">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is present on Users page........................................passed
+When admin clicks on "Edit" option available below the username as "admin"..passed
+Then admin navigates to Profile page in order to edit the details of admin..passed
+And changes the firstname and lastname to "Nikita" and "Pande" respectively.passed
+And clicks on Update Profile button.........................................passed
+Then admin receives "Profile updated." on the same page after successfully updating the details.passed
+When admin clicks on Users option from the main menu........................passed
+Then Users page gets displayed..............................................passed
+And admin clicks on "View" option available below the username "admin"......passed
+Then admin navigates to his/her profile page and verifies firstname and lastname with updated values as "Nikita" and "Pande".passed
+And clicks on "Details" option of any specific available property...........passed
+Then admin navigates to the page which is showing all the details of selected property.passed
+]]></system-out>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify edit, delete and view options which are available below the username of each user record except admin record" time="136.45465">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page in order to edit, view and delete any user record.passed
+When admin creates a new user-record having "90Aaditya", "aadi@gmail.com", "Aaditya", "Kulkarni","AadiSample@901".passed
+And clicks on "Edit" which is available below the "90Aaditya"...............passed
+Then admin is redirected to Edit User page for the purpose of editing the details.passed
+And changes the values of firstname, lastname and email with "Aakash", "Jadhav" and "aakash33@gmail.com" respectively and clicks on the Update User button.passed
+Then after successful updation, admin receives "User updated."..............passed
+And clicks on Back to Users link............................................passed
+Then admin is redirected to Users page......................................passed
+When admin clicks on the option named as "View" which is available below the "90Aaditya".passed
+Then admin navigates to profile page and verifies firstname, lastname and email with modified values as "Aakash","Jadhav" and "aakash33@gmail.com" respectively.passed
+And clicks on Dashboard option from Real Estate list which is available on upper bar of the profile page.passed
+Then admin is redirected to Dashboard.......................................passed
+And clicks on the option named as Users from the main menu..................passed
+Then again Users page gets displayed........................................passed
+When admin clicks on "Delete" option available below the "90Aaditya"........passed
+Then admin is redirected to Delete Users page...............................passed
+And Confirm Deletion button is clicked by admin.............................passed
+Then admin is again redirected to Users page................................passed
+And receives "User deleted." after successful deletion of required user record.passed
+]]></system-out>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user functionality with valid and invalid inputs" time="85.297014">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page for the purpose of adding new user.............passed
+When admin clicks on Add New option from the main menu......................passed
+Then admin navigates to Add New User page...................................passed
+And enters "Vinay23" , "1234567890@gmail.com", "vinay", "joshi","www.sample.com", "vinayjoshiRTY@23" in the respective input fields.passed
+And selects "<status>" as check/uncheck for the checkbox of Send User Notification field and selects "Customer" from Role list.passed
+And clicks on Add New User button after filling the form....................passed
+Then admin goes to Users page...............................................passed
+And receives "New user created." after successfully adding the new user having details as "Vinay23" , "1234567890@gmail.com", "vinay", "joshi","www.sample.com".passed
+]]></system-out>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user functionality with valid and invalid inputs 2" time="133.282589">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page for the purpose of adding new user.............passed
+When admin clicks on Add New option from the main menu......................passed
+Then admin navigates to Add New User page...................................passed
+And enters "764323557" , "_______@rediff.com", "Bhakti", "Mali","www.education.in", "bhaktiDemo$28" in the respective input fields.passed
+And selects "<status>" as check/uncheck for the checkbox of Send User Notification field and selects "Agent" from Role list.passed
+And clicks on Add New User button after filling the form....................passed
+Then admin goes to Users page...............................................passed
+And receives "New user created." after successfully adding the new user having details as "764323557" , "_______@rediff.com", "Bhakti", "Mali","www.education.in".passed
+]]></system-out>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user functionality with valid and invalid inputs 3" time="87.207347">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page for the purpose of adding new user.............passed
+When admin clicks on Add New option from the main menu......................passed
+Then admin navigates to Add New User page...................................passed
+And enters "35Akshay53" , "akshay@gmail.com", "Akshay35", "53Akshay","www./demo.com", "akshayDemo$56" in the respective input fields.passed
+And selects "<status>" as check/uncheck for the checkbox of Send User Notification field and selects "Customer" from Role list.passed
+And clicks on Add New User button after filling the form....................passed
+Then admin goes to Users page...............................................passed
+And receives "New user created." after successfully adding the new user having details as "35Akshay53" , "akshay@gmail.com", "Akshay35", "53Akshay","www./demo.com".passed
+]]></system-out>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user functionality with valid and invalid inputs 4" time="118.039728">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page for the purpose of adding new user.............passed
+When admin clicks on Add New option from the main menu......................passed
+Then admin navigates to Add New User page...................................passed
+And enters "86Purnima" , "demo@gmail.com", "null", "null","www.rediff.com", "hsgdys^%65TRF878" in the respective input fields.passed
+And selects "<status>" as check/uncheck for the checkbox of Send User Notification field and selects "Editor" from Role list.passed
+And clicks on Add New User button after filling the form....................passed
+Then admin goes to Users page...............................................passed
+And receives "New user created." after successfully adding the new user having details as "86Purnima" , "demo@gmail.com", "null", "null","www.rediff.com".passed
+]]></system-out>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user functionality with valid and invalid inputs 5" time="89.10502">
+<failure message="junit.framework.AssertionFailedError&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:55)&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:64)&#13;&#10;&#9;at StepDefination.UsersDefination.receives_after_successfully_adding_the_new_user_having_details_as(UsersDefination.java:1630)&#13;&#10;&#9;at ✽.And receives &quot;New user created.&quot; after successfully adding the new user having details as &quot;aa78@sanu&quot; , &quot;.sanu123@gmail.com&quot;, &quot;sanu&quot;, &quot;khanna&quot;,&quot;www.mydemo.com&quot;(automatestate.feature:112)&#13;&#10;"><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page for the purpose of adding new user.............passed
+When admin clicks on Add New option from the main menu......................passed
+Then admin navigates to Add New User page...................................passed
+And enters "aa78@sanu" , ".sanu123@gmail.com", "sanu", "khanna","www.mydemo.com", "Ashwinidemo@2399" in the respective input fields.passed
+And selects "<status>" as check/uncheck for the checkbox of Send User Notification field and selects "Shop manager" from Role list.passed
+And clicks on Add New User button after filling the form....................passed
+Then admin goes to Users page...............................................passed
+And receives "New user created." after successfully adding the new user having details as "aa78@sanu" , ".sanu123@gmail.com", "sanu", "khanna","www.mydemo.com".failed
+
+StackTrace:
+junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.fail(Assert.java:64)
+	at StepDefination.UsersDefination.receives_after_successfully_adding_the_new_user_having_details_as(UsersDefination.java:1630)
+	at ✽.And receives "New user created." after successfully adding the new user having details as "aa78@sanu" , ".sanu123@gmail.com", "sanu", "khanna","www.mydemo.com"(automatestate.feature:112)
+]]></failure>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user functionality with valid and invalid inputs 6" time="87.565125">
+<failure message="junit.framework.AssertionFailedError&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:55)&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:64)&#13;&#10;&#9;at StepDefination.UsersDefination.receives_after_successfully_adding_the_new_user_having_details_as(UsersDefination.java:1637)&#13;&#10;&#9;at ✽.And receives &quot;New user created.&quot; after successfully adding the new user having details as &quot;aakshu78i&quot; , &quot;aakshu897.@gmail.com&quot;, &quot;akshu&quot;, &quot;sharma&quot;,&quot;www.sampleweb.com&quot;(automatestate.feature:112)&#13;&#10;"><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page for the purpose of adding new user.............passed
+When admin clicks on Add New option from the main menu......................passed
+Then admin navigates to Add New User page...................................passed
+And enters "aakshu78i" , "aakshu897.@gmail.com", "akshu", "sharma","www.sampleweb.com", "hjdgcjys@56GH" in the respective input fields.passed
+And selects "<status>" as check/uncheck for the checkbox of Send User Notification field and selects "Editor" from Role list.passed
+And clicks on Add New User button after filling the form....................passed
+Then admin goes to Users page...............................................passed
+And receives "New user created." after successfully adding the new user having details as "aakshu78i" , "aakshu897.@gmail.com", "akshu", "sharma","www.sampleweb.com".failed
+
+StackTrace:
+junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.fail(Assert.java:64)
+	at StepDefination.UsersDefination.receives_after_successfully_adding_the_new_user_having_details_as(UsersDefination.java:1637)
+	at ✽.And receives "New user created." after successfully adding the new user having details as "aakshu78i" , "aakshu897.@gmail.com", "akshu", "sharma","www.sampleweb.com"(automatestate.feature:112)
+]]></failure>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user functionality with valid and invalid inputs 7" time="86.516445">
+<failure message="junit.framework.AssertionFailedError&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:55)&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:64)&#13;&#10;&#9;at StepDefination.UsersDefination.receives_after_successfully_adding_the_new_user_having_details_as(UsersDefination.java:1647)&#13;&#10;&#9;at ✽.And receives &quot;New user created.&quot; after successfully adding the new user having details as &quot;kittu45&quot; , &quot;sammy67@gmail.com&quot;, &quot;*%@#$&amp;&quot;, &quot;sammy&quot;,&quot;www.sammy.com&quot;(automatestate.feature:112)&#13;&#10;"><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page for the purpose of adding new user.............passed
+When admin clicks on Add New option from the main menu......................passed
+Then admin navigates to Add New User page...................................passed
+And enters "kittu45" , "sammy67@gmail.com", "*%@#$&", "sammy","www.sammy.com", "hsgdh767SD@ty" in the respective input fields.passed
+And selects "<status>" as check/uncheck for the checkbox of Send User Notification field and selects "Author" from Role list.passed
+And clicks on Add New User button after filling the form....................passed
+Then admin goes to Users page...............................................passed
+And receives "New user created." after successfully adding the new user having details as "kittu45" , "sammy67@gmail.com", "*%@#$&", "sammy","www.sammy.com".failed
+
+StackTrace:
+junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.fail(Assert.java:64)
+	at StepDefination.UsersDefination.receives_after_successfully_adding_the_new_user_having_details_as(UsersDefination.java:1647)
+	at ✽.And receives "New user created." after successfully adding the new user having details as "kittu45" , "sammy67@gmail.com", "*%@#$&", "sammy","www.sammy.com"(automatestate.feature:112)
+]]></failure>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user functionality with valid and invalid inputs 8" time="107.352739">
+<failure message="junit.framework.AssertionFailedError&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:55)&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:64)&#13;&#10;&#9;at StepDefination.UsersDefination.receives_after_successfully_adding_the_new_user_having_details_as(UsersDefination.java:1657)&#13;&#10;&#9;at ✽.And receives &quot;New user created.&quot; after successfully adding the new user having details as &quot;aman.singh&quot; , &quot;aman@gmail.com&quot;, &quot;aman&quot;, &quot;^&amp;^%@&amp;&quot;,&quot;www.natures.com&quot;(automatestate.feature:112)&#13;&#10;"><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page for the purpose of adding new user.............passed
+When admin clicks on Add New option from the main menu......................passed
+Then admin navigates to Add New User page...................................passed
+And enters "aman.singh" , "aman@gmail.com", "aman", "^&^%@&","www.natures.com", "bgsdhc67DSD@gf" in the respective input fields.passed
+And selects "<status>" as check/uncheck for the checkbox of Send User Notification field and selects "Author" from Role list.passed
+And clicks on Add New User button after filling the form....................passed
+Then admin goes to Users page...............................................passed
+And receives "New user created." after successfully adding the new user having details as "aman.singh" , "aman@gmail.com", "aman", "^&^%@&","www.natures.com".failed
+
+StackTrace:
+junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.fail(Assert.java:64)
+	at StepDefination.UsersDefination.receives_after_successfully_adding_the_new_user_having_details_as(UsersDefination.java:1657)
+	at ✽.And receives "New user created." after successfully adding the new user having details as "aman.singh" , "aman@gmail.com", "aman", "^&^%@&","www.natures.com"(automatestate.feature:112)
+]]></failure>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user functionality with valid and invalid inputs 9" time="83.175662">
+<failure message="junit.framework.AssertionFailedError&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:55)&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:64)&#13;&#10;&#9;at StepDefination.UsersDefination.receives_after_successfully_adding_the_new_user_having_details_as(UsersDefination.java:1669)&#13;&#10;&#9;at ✽.And receives &quot;New user created.&quot; after successfully adding the new user having details as &quot;kavita45&quot; , &quot;kavi@gmail.com&quot;, &quot;kavi&quot;, &quot;dchsgdhgfvuysg45ghsaycdgshzbch56vhgvfhgf6fhygfjgjhh&quot;,&quot;www.kaviweb.com&quot;(automatestate.feature:112)&#13;&#10;"><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page for the purpose of adding new user.............passed
+When admin clicks on Add New option from the main menu......................passed
+Then admin navigates to Add New User page...................................passed
+And enters "kavita45" , "kavi@gmail.com", "kavi", "dchsgdhgfvuysg45ghsaycdgshzbch56vhgvfhgf6fhygfjgjhh","www.kaviweb.com", "jhdjhfs767@TF" in the respective input fields.passed
+And selects "<status>" as check/uncheck for the checkbox of Send User Notification field and selects "Author" from Role list.passed
+And clicks on Add New User button after filling the form....................passed
+Then admin goes to Users page...............................................passed
+And receives "New user created." after successfully adding the new user having details as "kavita45" , "kavi@gmail.com", "kavi", "dchsgdhgfvuysg45ghsaycdgshzbch56vhgvfhgf6fhygfjgjhh","www.kaviweb.com".failed
+
+StackTrace:
+junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.fail(Assert.java:64)
+	at StepDefination.UsersDefination.receives_after_successfully_adding_the_new_user_having_details_as(UsersDefination.java:1669)
+	at ✽.And receives "New user created." after successfully adding the new user having details as "kavita45" , "kavi@gmail.com", "kavi", "dchsgdhgfvuysg45ghsaycdgshzbch56vhgvfhgf6fhygfjgjhh","www.kaviweb.com"(automatestate.feature:112)
+]]></failure>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user functionality with valid and invalid inputs 10" time="87.718292">
+<failure message="junit.framework.AssertionFailedError&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:55)&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:64)&#13;&#10;&#9;at StepDefination.UsersDefination.receives_after_successfully_adding_the_new_user_having_details_as(UsersDefination.java:1663)&#13;&#10;&#9;at ✽.And receives &quot;New user created.&quot; after successfully adding the new user having details as &quot;savita67&quot; , &quot;savi@gmail.com&quot;, &quot;dchsgdhgfvuygvshgahvcgshhsaycdgsvhgvfhgfjhjhuyutunk&quot;, &quot;joshi&quot;,&quot;www.savidemo.com&quot;(automatestate.feature:112)&#13;&#10;"><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page for the purpose of adding new user.............passed
+When admin clicks on Add New option from the main menu......................passed
+Then admin navigates to Add New User page...................................passed
+And enters "savita67" , "savi@gmail.com", "dchsgdhgfvuygvshgahvcgshhsaycdgsvhgvfhgfjhjhuyutunk", "joshi","www.savidemo.com", "hfbvhGHFYT@546" in the respective input fields.passed
+And selects "<status>" as check/uncheck for the checkbox of Send User Notification field and selects "Customer" from Role list.passed
+And clicks on Add New User button after filling the form....................passed
+Then admin goes to Users page...............................................passed
+And receives "New user created." after successfully adding the new user having details as "savita67" , "savi@gmail.com", "dchsgdhgfvuygvshgahvcgshhsaycdgsvhgvfhgfjhjhuyutunk", "joshi","www.savidemo.com".failed
+
+StackTrace:
+junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.fail(Assert.java:64)
+	at StepDefination.UsersDefination.receives_after_successfully_adding_the_new_user_having_details_as(UsersDefination.java:1663)
+	at ✽.And receives "New user created." after successfully adding the new user having details as "savita67" , "savi@gmail.com", "dchsgdhgfvuygvshgahvcgshhsaycdgsvhgvfhgfjhjhuyutunk", "joshi","www.savidemo.com"(automatestate.feature:112)
+]]></failure>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user functionality with valid and invalid inputs 11" time="79.299997">
+<failure message="junit.framework.AssertionFailedError&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:55)&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:64)&#13;&#10;&#9;at StepDefination.UsersDefination.receives_after_successfully_adding_the_new_user_having_details_as(UsersDefination.java:1680)&#13;&#10;&#9;at ✽.And receives &quot;New user created.&quot; after successfully adding the new user having details as &quot;sagar_user&quot; , &quot;sagar@gmail.com&quot;, &quot;sagar&quot;, &quot;thakur&quot;,&quot;wwwdotlesscom&quot;(automatestate.feature:112)&#13;&#10;"><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page for the purpose of adding new user.............passed
+When admin clicks on Add New option from the main menu......................passed
+Then admin navigates to Add New User page...................................passed
+And enters "sagar_user" , "sagar@gmail.com", "sagar", "thakur","wwwdotlesscom", "jhsvhjYGUY@768" in the respective input fields.passed
+And selects "<status>" as check/uncheck for the checkbox of Send User Notification field and selects "Author" from Role list.passed
+And clicks on Add New User button after filling the form....................passed
+Then admin goes to Users page...............................................passed
+And receives "New user created." after successfully adding the new user having details as "sagar_user" , "sagar@gmail.com", "sagar", "thakur","wwwdotlesscom".failed
+
+StackTrace:
+junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.fail(Assert.java:64)
+	at StepDefination.UsersDefination.receives_after_successfully_adding_the_new_user_having_details_as(UsersDefination.java:1680)
+	at ✽.And receives "New user created." after successfully adding the new user having details as "sagar_user" , "sagar@gmail.com", "sagar", "thakur","wwwdotlesscom"(automatestate.feature:112)
+]]></failure>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user form with expected validation messages" time="75.46572">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page and wants to add new user......................passed
+When admin clicks on Add New button.........................................passed
+Then admin is redirected to Add New User page...............................passed
+And enters "&^%$%&" , "anu@gmail.com", "Anushka", "Sharma","www.helpinghands.com", "Sampleanu@567".passed
+And selects the "Check" of checkbox of Send User Notification field as check/uncheck.passed
+And selects "Agent" from the list...........................................passed
+When admin clicks on Add new User button....................................passed
+Then admin receives "username is invalid" after entering the details of user whose username and email are "&^%$%&" and "anu@gmail.com" reprectively.passed
+]]></system-out>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user form with expected validation messages 2" time="75.259803">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page and wants to add new user......................passed
+When admin clicks on Add New button.........................................passed
+Then admin is redirected to Add New User page...............................passed
+And enters "null" , "null", "Anushka", "Sharma","www.helpinghands.com", "Sampleanu@567".passed
+And selects the "UnCheck" of checkbox of Send User Notification field as check/uncheck.passed
+And selects "Agent" from the list...........................................passed
+When admin clicks on Add new User button....................................passed
+Then admin receives "becomes red" after entering the details of user whose username and email are "null" and "null" reprectively.passed
+]]></system-out>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user form with expected validation messages 3" time="76.22808">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page and wants to add new user......................passed
+When admin clicks on Add New button.........................................passed
+Then admin is redirected to Add New User page...............................passed
+And enters "Anushaka25" , "anu25abccom", "Anushka", "Sharma","www.helpinghands.com", "Sampleanu@567".passed
+And selects the "Check" of checkbox of Send User Notification field as check/uncheck.passed
+And selects "Agent" from the list...........................................passed
+When admin clicks on Add new User button....................................passed
+Then admin receives "email address isn’t correct" after entering the details of user whose username and email are "Anushaka25" and "anu25abccom" reprectively.passed
+]]></system-out>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user form with expected validation messages 4" time="80.891421">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page and wants to add new user......................passed
+When admin clicks on Add New button.........................................passed
+Then admin is redirected to Add New User page...............................passed
+And enters "Anushaka25" , "@gmail.com", "Anushka", "Sharma","www.helpinghands.com", "Sampleanu@567".passed
+And selects the "Check" of checkbox of Send User Notification field as check/uncheck.passed
+And selects "Agent" from the list...........................................passed
+When admin clicks on Add new User button....................................passed
+Then admin receives "email address isn’t correct" after entering the details of user whose username and email are "Anushaka25" and "@gmail.com" reprectively.passed
+]]></system-out>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify Add new user form with expected validation messages 5" time="87.825629">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page and wants to add new user......................passed
+When admin clicks on Add New button.........................................passed
+Then admin is redirected to Add New User page...............................passed
+And enters "Anushaka25" , "example@gmail..com", "Anushka", "Sharma","www.helpinghands.com", "Sampleanu@567".passed
+And selects the "UnCheck" of checkbox of Send User Notification field as check/uncheck.passed
+And selects "Agent" from the list...........................................passed
+When admin clicks on Add new User button....................................passed
+Then admin receives "email address isn’t correct" after entering the details of user whose username and email are "Anushaka25" and "example@gmail..com" reprectively.passed
+]]></system-out>
+</testcase>
+<testcase classname="Automating the Users module of real estate application" name="Verify screen options functionality on Users page" time="44.38986">
+<system-out><![CDATA[Given Admin is on real estate application page..............................passed
+When admin clicks on LOG IN/REGISTER option.................................passed
+Then admin navigates to My Profile page.....................................passed
+And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&".passed
+And clicks on Sign In button................................................passed
+Then admin navigates to dashboard page......................................passed
+And clicks on Users option from the menu....................................passed
+Then admin navigates to Users page..........................................passed
+Given admin is on Users page in order to use screen options functionality...passed
+When admin clicks on Screen Options.........................................passed
+Then Columns and Pagination options get displayed...........................passed
+And admin selects the checkboxes of "Email" , "Role" and deselects the checkbox of "Posts".passed
+Then admin verifies that "Email" and "Role" columns are displayed and "Posts" column is not displayed.passed
+When admin enters a numerical value "3" in Number of items per page field...passed
+And clicks on Apply button which is available under Pagination option.......passed
+Then admin is able to see only "3" number of user records on Users page.....passed
+]]></system-out>
+</testcase>
+</testsuite>

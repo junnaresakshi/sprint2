@@ -9,11 +9,13 @@ import cucumber.api.java.Before;
 public class hook {
 	public static WebDriver driver;
 	@Before
-	public void initialization()
+	public void initialization() throws InterruptedException
 	{
 		System.setProperty("webdriver.chrome.driver", ".\\driver\\chromedriver.exe");
 		driver = new ChromeDriver();
+		Thread.sleep(1000);
 		driver.get("http://realty-real-estatem1.upskills.in/");
+		Thread.sleep(2000);
 	}
 	@After
 	public void closedriver()
@@ -23,4 +25,3 @@ public class hook {
 		System.out.println("Browser is closing now");
 	}
 }
-//jgbkuhfgiuy87689y7590jsvjhbsjdgvugwyt5768767895jkdfnvkjdfsvuhte8uy78496509omskcmlaskfcpoeribvhjghue8r75t960ijtgnvmnbmhdhrjkgmVGHFUYGRHFJNSJKC6567798UHJFDNgdufhbvcnjmueriods56789fkdjhcnghdbcxmkjdfiueriteriosdknm64893hfdbchvhydg6758769ufhcjdhwRTYRYUWGUj8nhfu7

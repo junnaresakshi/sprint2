@@ -4,7 +4,7 @@ Feature: Automating the Users module of real estate application
     Given Admin is on real estate application page
     When admin clicks on LOG IN/REGISTER option
     Then admin navigates to My Profile page
-    And enters username as "amit92luthra" and password as "admin@987654321"
+    And enters username as "mohankrishna176@gmail.com" and password as "Secret@123&&"
     And clicks on Sign In button
     Then admin navigates to dashboard page
     And clicks on Users option from the menu
@@ -23,7 +23,7 @@ Feature: Automating the Users module of real estate application
 
     Examples: 
       | username1  | emailid1       | password1       | rolename1 | username2 | emailid2             | password2    | rolename2 | username3  | emailid3             | password3     | rolename3 | role   | AllLink | Word   |
-      | Samiksha55 | samu@gamil.com | DemoSamiksha&55 | Editor    | Saurabh56 | SampleSaru@gmail.com | PassParu@289 | Editor    | DemoUserID | uniquemail@gmail.com | Uniquedemo@57 | Author    | Editor | All     | unique |
+      | Samiksha55 | samu@gmail.com | DemoSamiksha&55 | Editor    | Saurabh56 | SampleSaru@gmail.com | PassParu@289 | Editor    | DemoUserID | uniquemail@gmail.com | Uniquedemo@57 | Author    | Editor | All     | unique |
 
   @bulk
   Scenario Outline: Verify Bulk Actions functionality on Users page
@@ -72,7 +72,7 @@ Feature: Automating the Users module of real estate application
 
     Examples: 
       | NewFirstName | NewLastName | Validation_message |
-      | Aman         | Singh       | Profile updated.   |
+      | Nikita         | Pande       | Profile updated.   |
 
   @editdeleteview
   Scenario Outline: Verify edit, delete and view options which are available below the username of each user record except admin record
@@ -143,4 +143,17 @@ Feature: Automating the Users module of real estate application
       | Anushaka25 | @gmail.com                 | Anushka   | Sharma   | www.helpinghands.com | Sampleanu@567 | Check  | Agent | email address isn’t correct |
       | Anushaka25 | example@gmail..com         | Anushka   | Sharma   | www.helpinghands.com | Sampleanu@567 | UnCheck  | Agent | email address isn’t correct |
     
-  
+	@screenopt
+	Scenario Outline: Verify screen options functionality on Users page
+	Given admin is on Users page in order to use screen options functionality
+	When admin clicks on Screen Options 
+	Then Columns and Pagination options get displayed
+	And admin selects the checkboxes of "Email" , "Role" and deselects the checkbox of "Posts"
+	Then admin verifies that "Email" and "Role" columns are displayed and "Posts" column is not displayed
+	When admin enters a numerical value "<No>" in Number of items per page field
+	And clicks on Apply button which is available under Pagination option
+	Then admin is able to see only "<No>" number of user records on Users page
+	Examples:
+	|No|
+	|3|
+	

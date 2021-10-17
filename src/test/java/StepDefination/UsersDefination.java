@@ -23,6 +23,7 @@ public class UsersDefination {
 	    // Write code here that turns the phrase above into concrete actions
 		try
 		{
+			//Thread.sleep(2000);
 		System.out.println("Application window has initialised");
 		driver.manage().window().maximize();
 		}
@@ -38,6 +39,7 @@ public class UsersDefination {
 	    // Write code here that turns the phrase above into concrete actions
 		try
 		{
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("//a[@class='sign-in']")).click();
 			System.out.println("Admin clicks on LOG IN/REGISTER");
 		}
@@ -1451,6 +1453,7 @@ public class UsersDefination {
 		    // Write code here that turns the phrase above into concrete actions
 		    try
 		    {
+		    	Thread.sleep(2000);
 		    	String expect="Users ‹ Real Estate — WordPress";
 		    	String actual = driver.getTitle();
 		    	Assert.assertEquals(expect, actual);
@@ -1528,9 +1531,9 @@ public class UsersDefination {
 		    	{
 		    		driver.findElement(By.name("last_name")).sendKeys(ln);
 		    	}
-		    
+		    	Thread.sleep(2000);
 		    	driver.findElement(By.name("url")).sendKeys(web);
-		    	Thread.sleep(5000);
+		    	Thread.sleep(6000);
 		    	driver.findElement(By.xpath("//button[text()='Show password']")).click();
 		    	Thread.sleep(2000);
 		    	driver.findElement(By.name("pass1-text")).sendKeys(pass);
@@ -1775,10 +1778,11 @@ public class UsersDefination {
 				Thread.sleep(3000);
 				driver.findElement(By.name("url")).sendKeys(w);
 				
+				Thread.sleep(2000);
 				driver.findElement(By.xpath("//button[text()='Show password']")).click();
-				Thread.sleep(3000);
+				Thread.sleep(2000);
 				driver.findElement(By.xpath("//input[@id='pass1-text']")).sendKeys(p);
-				Thread.sleep(3000);	
+				Thread.sleep(2000);	
 		   }
 		   catch(Exception e1)
 		   {
@@ -1958,6 +1962,241 @@ public class UsersDefination {
 			}
 		
 
+		}
+		
+		
+		//*************************************************** Screen Options *************************************************
+		@Given("^admin is on Users page in order to use screen options functionality$")
+		public void admin_is_on_Users_page_in_order_to_use_screen_options_functionality() throws Throwable {
+		    // Write code here that turns the phrase above into concrete actions
+		   try
+		   {
+			   System.out.println("Admin is on Users page in order to use screen options functionality ");
+		   }
+		   catch(Exception e)
+			{
+				   System.out.println("Error: "+e);
+				   Assert.fail();
+			}
+		}
+
+		@When("^admin clicks on Screen Options$")
+		public void admin_clicks_on_Screen_Options() throws Throwable {
+		    // Write code here that turns the phrase above into concrete actions
+		    try
+		    {
+		    	Thread.sleep(1000);
+		    	driver.findElement(By.xpath("//button[@id='show-settings-link']")).click();
+		    	System.out.println("Clicked on Screen Options");
+		    	Thread.sleep(1000);
+		    	
+		    }
+		    catch(Exception e)
+			{
+				   System.out.println("Error: "+e);
+				   Assert.fail();
+			}
+		}
+
+		@Then("^Columns and Pagination options get displayed$")
+		public void columns_and_Pagination_options_get_displayed() throws Throwable {
+		    // Write code here that turns the phrase above into concrete actions
+		    try
+		    {
+	
+		    	boolean c1=driver.findElement(By.xpath("//legend[text()='Columns']")).isDisplayed();
+		    	boolean c2=driver.findElement(By.xpath("//legend[text()='Pagination']")).isDisplayed();
+		    	
+		    	if(c1 && c2)
+		    	{
+		    		System.out.println("Columns and Pagination options get displayed");
+		    	}
+		    	else
+		    	{
+		    		System.out.println("Columns and Pagination options are not displayed");
+		    		Assert.fail();
+		    	}
+		    }
+		    catch(Exception e)
+			{
+				   System.out.println("Error: "+e);
+				   Assert.fail();
+			}
+		}
+
+		@Then("^admin selects the checkboxes of \"([^\"]*)\" , \"([^\"]*)\" and deselects the checkbox of \"([^\"]*)\"$")
+		public void admin_selects_the_checkboxes_of_and_deselects_the_checkbox_of(String e, String r, String p) throws Throwable {
+		    // Write code here that turns the phrase above into concrete actions
+		    try
+		    {
+		    	boolean ce=driver.findElement(By.xpath("//input[@name='email-hide']")).isSelected();
+		    	if(ce)
+		    	{
+		    		System.out.println(e+" checkbox is already selected");
+		    	}
+		    	else
+		    	{
+		    		driver.findElement(By.xpath("//input[@name='email-hide']")).click();
+		    		System.out.println(e+" checkbox is selected");
+
+		    	}
+		    	
+		    	boolean cr=driver.findElement(By.xpath("//input[@name='role-hide']")).isSelected();
+		    	if(cr)
+		    	{
+		    		System.out.println(r+" checkbox is already selected");
+		    	}
+		    	else
+		    	{
+		    		driver.findElement(By.xpath("//input[@name='role-hide']")).click();
+		    		System.out.println(r+" checkbox is selected");
+
+		    	}
+		    	boolean cp=driver.findElement(By.xpath("//input[@name='posts-hide']")).isSelected();
+		    	if(cp)
+		    	{
+		    		driver.findElement(By.xpath("//input[@name='posts-hide']")).click();
+		    		System.out.println(p+" checkbox is deselected");
+		    	}
+		    	else
+		    	{
+	
+		    		System.out.println(p+" checkbox is already deselected");
+
+		    	}
+		    	
+		    	
+		    }
+		    catch(Exception error)
+			{
+				   System.out.println("Error: "+error);
+				   Assert.fail();
+			}
+		}
+
+		@Then("^admin verifies that \"([^\"]*)\" and \"([^\"]*)\" columns are displayed and \"([^\"]*)\" column is not displayed$")
+		public void admin_verifies_that_and_columns_are_displayed_and_column_is_not_displayed(String ec, String rc, String pc) throws Throwable {
+		    // Write code here that turns the phrase above into concrete actions
+		    try
+		    {
+		    	List<WebElement> li=driver.findElements(By.xpath("//span[text()='"+ec+"']"));
+				for(int i=0;i<1;i++)
+				{
+					WebElement eobj=li.get(i);
+					boolean m1=eobj.isDisplayed();
+					if(m1)
+					{
+						System.out.println("Email column is visible");
+					}
+					else
+					{
+						System.out.println("Email column is not visible");
+						Assert.fail();
+					}
+				}	
+				
+					List<WebElement> li1=driver.findElements(By.xpath("//th[text()='"+rc+"']"));
+					for(int j=0;j<1;j++)
+					{
+						WebElement eobj1=li1.get(j);
+						boolean m2=eobj1.isDisplayed();
+						if(m2)
+						{
+							System.out.println("Role column is visible");
+						}
+						else
+						{
+							System.out.println("Role column is not visible");
+							Assert.fail();
+						}
+					}
+					
+					List<WebElement> li2=driver.findElements(By.xpath("//th[text()='"+pc+"']"));
+					for(int k=0;k<1;k++)
+					{
+						WebElement eobj2=li2.get(k);
+						boolean m3=eobj2.isDisplayed();
+						if(m3)
+						{
+							System.out.println("Posts column is visible");
+							Assert.fail();
+						}
+						else
+						{
+							System.out.println("Posts column is not visible");
+						}
+					}
+					
+					
+		    }
+		    catch(Exception error)
+			{
+				   System.out.println("Error: "+error);
+				   Assert.fail();
+			}
+		}
+
+		@When("^admin enters a numerical value \"([^\"]*)\" in Number of items per page field$")
+		public void admin_enters_a_numerical_value_in_Number_of_items_per_page_field(String nv) throws Throwable {
+		    // Write code here that turns the phrase above into concrete actions
+		    try
+		    {
+		    	//int n=Integer.parseInt(nv);
+		    	
+		    	WebElement ele=driver.findElement(By.xpath("//input[@class='screen-per-page']"));
+		    	ele.clear();
+		    	ele.sendKeys(nv);
+		    	System.out.println(nv+" is entered into the respective field");
+		    	
+		    
+		    }
+		    catch(Exception error)
+			{
+				   System.out.println("Error: "+error);
+				   Assert.fail();
+			}
+		}
+
+		@When("^clicks on Apply button which is available under Pagination option$")
+		public void clicks_on_Apply_button_which_is_available_under_Pagination_option() throws Throwable {
+		    // Write code here that turns the phrase above into concrete actions
+		    try
+		    {
+		    	Thread.sleep(1000);
+		    	driver.findElement(By.xpath("//input[@name='screen-options-apply']")).click();
+		    	System.out.println("Clicked on Apply button of pagination section");
+		    }
+		    catch(Exception error)
+			{
+				   System.out.println("Error: "+error);
+				   Assert.fail();
+			}
+		}
+
+		@Then("^admin is able to see only \"([^\"]*)\" number of user records on Users page$")
+		public void admin_is_able_to_see_only_number_of_user_records_on_Users_page(String num) throws Throwable {
+		    // Write code here that turns the phrase above into concrete actions
+		   try
+		   {
+			 int no=Integer.parseInt(num);
+			 List<WebElement> nli=driver.findElements(By.xpath("//input[@name='users[]']"));
+			 int size=nli.size();
+			 if(size==no)
+			 {
+				 System.out.println(num+" number of user records are displayed");
+			 }
+			 else
+			 {
+				 System.out.println("Number of records are not displayed correctly");
+				 Assert.fail();
+			 }
+			 
+		   }
+		   catch(Exception error)
+			{
+				   System.out.println("Error: "+error);
+				   Assert.fail();
+			}
 		}
 			
 }

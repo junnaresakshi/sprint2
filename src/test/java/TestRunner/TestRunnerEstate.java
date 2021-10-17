@@ -12,9 +12,8 @@ features="src/test/java/Feature"
 ,glue={"StepDefination","hooks"},
 dryRun=false,
 monochrome=true,
-tags={"@search"}
-//plugin={"pretty","html:target/cucumber-pretty"},
-//plugin={"pretty","junit:target/report.xml","json:target/jsonreport.json"}
+//tags={"@screenopt"}
+plugin={"pretty","html:target/cucumber-pretty","junit:target/report.xml","json:target/jsonreport.json"}
 )
 
 public class TestRunnerEstate {
